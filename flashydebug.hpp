@@ -69,11 +69,7 @@ public:
         data.push_back('\"');
     }
 
-    // void addFloatVector2D(std::string key, std::vector< std::vector<float>> value) {
-    
-    void addFloatVector(std::string key, std::vector<float> value) {
-        firstItemCheck();
-        writeKey(key);
+    void writeFloatArray(std::vector<float> value) {
         data.push_back('[');
 
         for(size_t i=0; i < value.size(); i++) {
@@ -89,6 +85,25 @@ public:
             if (i < value.size()-1) data.push_back(',');
         }
         data.push_back(']');
+
+    }
+
+    void addFloatVector2D(std::string key, std::vector< std::vector<float>> value) {
+        firstItemCheck();
+        writeKey(key);
+        data.push_back('[');
+        for(size_t i=0; i < value.size(); i++) {
+            writeFloatArray(value.at(i));
+            if (i < value.size()-1) data.push_back(',');
+        }
+        data.push_back(']');
+
+    }
+
+    void addFloatVector(std::string key, std::vector<float> value) {
+        firstItemCheck();
+        writeKey(key);
+        writeFloatArray(value);
     }
 
     void writeToFlash() {

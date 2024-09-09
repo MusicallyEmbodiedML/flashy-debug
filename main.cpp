@@ -21,6 +21,7 @@ int main() {
     fdebug.addInt("cheese",17);
     fdebug.addFloat("pi", 3.1415926f);
     fdebug.addFloatVector("weights", {123.4, 0.1, -17.4, 0});
+    fdebug.addFloatVector2D("biases", {{0.1,-4,2},{-22.1, 1293.2, 19832.5}});
     fdebug.writeToFlash();
   //   //write data
   //   // std::vector<__uint8_t> data='abc';
