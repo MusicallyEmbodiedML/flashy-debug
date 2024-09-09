@@ -10,6 +10,8 @@ xflash  --target=XCORE-AI-EXPLORER --boot-partition-size 2097152 --factory a.xe
 
 The flash on the explorer board is 4Mb (32 Mbit)
 
+Make sure to include ```-lquadflash``` when linking.
+
 
 ## Capabilities
 
